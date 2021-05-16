@@ -167,6 +167,19 @@ export function Home() {
     }
   ]);
 
+import { Button, Modal } from 'react-bootstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlus
+} from "@fortawesome/free-solid-svg-icons";
+
+export function Home() {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className="home">
       <h1>Recetas</h1>
