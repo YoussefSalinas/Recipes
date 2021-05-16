@@ -9,7 +9,7 @@ import { RecetaList } from './RecetaList';
 
 export function Home() {
   const [recetas, setRecetas] = useState([
-    { 
+    {
       id: 1, 
       nombre: 'Huevos estrellados', 
       categoria: 'desayunos',
@@ -87,7 +87,7 @@ export function Home() {
       ],
       imagen: 'https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=685&q=80'
     },
-    { 
+    {
       id: 4, 
       nombre: 'Desayuno 1', 
       categoria: 'desayunos',
@@ -166,19 +166,6 @@ export function Home() {
       imagen: 'https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=685&q=80'
     }
   ]);
-
-import { Button, Modal } from 'react-bootstrap';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus
-} from "@fortawesome/free-solid-svg-icons";
-
-export function Home() {
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <div className="home">
