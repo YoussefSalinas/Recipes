@@ -13,14 +13,73 @@ $xxl: 1400px;
   //  font-size:12px;
   //}
 }
-
+// Recetas Home
 .card {
   margin: 1rem auto;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   border: 1px solid rgba(0,0,0,0.25) !important;
 }
 .card img {
-  min-height: 225px;
-  max-height: 225px;
+  border-radius: 1rem 1rem 0 0;
+  min-height: 250px;
+  max-height: 250px;
   object-fit: cover;
+}
+/** Nombre de la receta **/
+.card .card-img-overlay {
+  top: 50%;
+  transform: translate(0, -70%);
+  padding: 0;
+  height: 3.5rem;
+}
+.card .card-img-overlay .card-title {
+  background-color: rgba(0,0,0,0.25);
+  padding: 1rem 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+/** Categoría **/
+.card .card-body .card-subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #6c757d;
+  text-align: left;
+}
+/** Dificultad **/
+.card .card-body .difficulty {
+  text-align: end;
+}
+/**
+ - Tiempo de preparación
+ - Tiempo de cocción
+ - Tiempo de descanso
+**/
+.card .card-footer .time-preparation svg,
+.card .card-footer .time-cooking svg,
+.card .card-footer .time-rest svg {
+  font-size: 1.25rem;
+}
+.card .card-footer .time-preparation .col,
+.card .card-footer .time-cooking .col,
+.card .card-footer .time-rest .col {
+  flex: auto;
+}
+.card .card-footer .time-preparation .col h4,
+.card .card-footer .time-cooking .col h4,
+.card .card-footer .time-rest .col h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.card .card-footer .time-preparation .col p,
+.card .card-footer .time-cooking .col p,
+.card .card-footer .time-rest .col p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+}
+.card .card-footer .time-preparation .col p span,
+.card .card-footer .time-cooking .col p span,
+.card .card-footer .time-rest .col p span {
+  color: #6c757d;
 }
