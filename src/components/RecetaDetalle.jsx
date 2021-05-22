@@ -4,7 +4,7 @@ import "../assets/scss/RecetaDetalle.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStopwatch, faStar } from "@fortawesome/free-solid-svg-icons";
 
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card, Button, Image, Carousel } from "react-bootstrap";
 
 export function RecetaDetalle({ receta }) {
   const { 
@@ -21,11 +21,13 @@ export function RecetaDetalle({ receta }) {
     utensilios,
     ingredientes,
     preparacion,
-    imagen 
+    imagen,
+    nombreUsuario,
+    imagenUsuario
   } = receta;
 
   const reduceText = ( text, qty ) => {
-    return (text.length > qty) ? `${text.substring(0, qty)} ...` : text;
+    return (text.length > qty) ? `${text.substring(0, qty)}...` : text;
   }
 
   const capitalizeFirstLetter = ( text ) => {
@@ -43,54 +45,39 @@ export function RecetaDetalle({ receta }) {
   }
 
   return (
+    
+
+    
     <Col xs={6} md={4}>
-      <Card>
+      <Card
+        // onClick={() => {alert(`${nombre} seleccionada`)}}
+      >
         <Card.Img
+          className="cover"
           variant="top"
           src={imagen}
         />
-        <Card.ImgOverlay>
-          <Card.Title>{reduceText(nombre, 35)}</Card.Title>
-        </Card.ImgOverlay>
         <Card.Body>
-          <Row>
-            <Col>
-              <Card.Subtitle>{capitalizeFirstLetter(categoria)}</Card.Subtitle>
-            </Col>
-            <Col className="difficulty">{renderDifficulty()}</Col>
+          <Row className="name">
+            <Card.Title>{reduceText(nombre, 35)}</Card.Title>
           </Row>
-          
-        </Card.Body>
-        <Card.Footer>
-          <Row>
-            <Col className="time-preparation">
+          <Row className="info">
+            <Col className="profile">
               <Row>
-                <Col><h4>Preparación</h4></Col>
-                <Col><p><span>{tiempoPreparacion}</span> min</p></Col>
-                <Col><FontAwesomeIcon icon={faStopwatch} /></Col>
+                <Col><Image src={imagenUsuario} roundedCircle /></Col>
+                <Col><p>{nombreUsuario}</p></Col>
               </Row>
             </Col>
-            <Col className="time-cooking">
+            <Col className="difficulty-category">
               <Row>
-                <Col><h4>Cocción</h4></Col>
-                <Col><p><span>{tiempoCoccion}</span> min</p></Col>
-                <Col><FontAwesomeIcon icon={faStopwatch} /></Col>
-              </Row>
-            </Col>
-            <Col className="time-rest">
-              <Row>
-                <Col><h4>Descanso</h4></Col>
-                <Col><p><span>{tiempoDescanso}</span> min</p></Col>
-                <Col><FontAwesomeIcon icon={faStopwatch} /></Col>
+                <Col className="difficulty">{renderDifficulty()}</Col>
+                <Card.Subtitle className="category">{capitalizeFirstLetter(categoria)}</Card.Subtitle>
               </Row>
             </Col>
           </Row>
-          {/* <small className="text-muted">Last updated 3 mins ago</small> */}
-        </Card.Footer>
-        <Card.Body>
-          <Card.Link href="#">Ver detalles</Card.Link>
         </Card.Body>
       </Card>
     </Col>
+
   );
 }
