@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/scss/Home.scss';
 
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -214,7 +214,19 @@ export function Home() {
           <Card className="carta" number="6" />
         </Carousel>
       </Container>
-      <CardCarousel />
+      <Container className="nuevas-recetas">
+        <Row>
+          <Col>
+            <CardCarousel titulo={1} />
+          </Col>
+          <Col>
+            <CardCarousel titulo={2} />
+          </Col>
+          <Col>
+            <CardCarousel titulo={3} />
+          </Col>
+        </Row>
+      </Container>
     </div>
   )
 }
