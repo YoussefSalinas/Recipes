@@ -1,6 +1,8 @@
 import React, { useEffect, useCallback, useState, Fragment } from "react";
 import "../assets/scss/CardCarousel.scss";
 
+import * as Helpers from '../helpers/Helpers';
+
 import {
   Row,
   Col,
@@ -389,27 +391,6 @@ export function CardCarousel({ titulo }) {
 
   }
 
-  const isActive = (indexes, cardIndex) => {
-    if (indexes.action === 'left') {
-      if (indexes.previousIndex === cardIndex) {
-        return 'prev left';
-      } else if (indexes.currentIndex === cardIndex) {
-        return 'active left';
-      } else if (indexes.nextIndex === cardIndex) {
-        return 'next left';
-      }
-    } else {
-      if (indexes.previousIndex === cardIndex) {
-        return 'prev right';
-      } else if (indexes.currentIndex === cardIndex) {
-        return 'active right';
-      } else if (indexes.nextIndex === cardIndex) {
-        return 'next right';
-      }
-    }
-    return "inactive";
-  }
-
   // useEffect(() => {
   //  const transitionInterval = setInterval(() => {
   //    handleCardTransition();
@@ -425,9 +406,9 @@ export function CardCarousel({ titulo }) {
         {recetas.map((card, index) => (
           <li
             key={card.id}
-            className={`cardd ${determineClasses(indexes, index)}`}
-            onClick={(`${determineClasses(indexes, index)}` == 'active right' 
-              || `${determineClasses(indexes, index)}` == 'active left') 
+            className={`cardd ${Helpers.determineClasses(indexes, index)}`}
+            onClick={(`${Helpers.determineClasses(indexes, index)}` == 'active right' 
+              || `${Helpers.determineClasses(indexes, index)}` == 'active left') 
               ? () => console.log(card.nombre)
               : undefined
             }
@@ -436,7 +417,7 @@ export function CardCarousel({ titulo }) {
               <Card.Img className="cover" variant="top" src={card.imagen} />
               <Card.Body>
                 <Row className="name">
-                  <Card.Title>{reduceText(card.nombre, 35)}</Card.Title>
+                  <Card.Title>{Helpers.reduceText(card.nombre, 35)}</Card.Title>
                 </Row>
                 <Row className="info">
                   <Col className="profile">
@@ -452,10 +433,10 @@ export function CardCarousel({ titulo }) {
                   <Col className="difficulty-category">
                     <Row>
                       <Col className="difficulty">
-                        {renderDifficulty(card.dificultad)}
+                        {Helpers.renderDifficulty(card.dificultad)}
                       </Col>
                       <Card.Subtitle className="category">
-                        {capitalizeFirstLetter(card.categoria)}
+                        {Helpers.capitalizeFirstLetter(card.categoria)}
                       </Card.Subtitle>
                     </Row>
                   </Col>
