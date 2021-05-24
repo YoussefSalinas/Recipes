@@ -14,6 +14,17 @@ $xxl: 1400px;
   //}
 }
 
-.nuevas-recetas.container .card-group .row {
+/** Categoría principal **/
+.categorias {
+  margin: 3.5rem auto 2.5rem auto;
+}
+/** Título **/
+.categorias .title {
+  font-weight: bold;
+  margin: 0 auto 2rem 0;
+}
+
+
+.categorias .card-group .row {
   width:100%;
 }

@@ -10,6 +10,7 @@ import { RecetaList } from './RecetaList';
 import Carousel from 'react-elastic-carousel';
 import { Card } from './Card';
 import { CardCarousel } from './CardCarousel';
+import { CategoriaList } from './CategoriaList';
 
 export function Home() {
   const [recetas, setRecetas] = useState([
@@ -183,6 +184,25 @@ export function Home() {
     // }
   ]);
 
+  const [categorias, setCategorias] = useState([
+    {
+      id: 1,
+      nombre: 'desayunos',
+      imagen: 'https://images.unsplash.com/photo-1612711501595-9f2def1e4837?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80'
+    },
+    {
+      id: 2,
+      nombre: 'comidas',
+      imagen: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'
+      
+    },
+    {
+      id: 3,
+      nombre: 'cenas',
+      imagen: 'https://images.unsplash.com/photo-1522784081430-8ac6a122cbc8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'
+    }
+  ])
+
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -198,23 +218,14 @@ export function Home() {
 
   return (
     <div className="home">
-      <h1>Recetas</h1>
-      <Button>
-        <FontAwesomeIcon icon={faPlus} />
-         Añadir nueva receta
-      </Button>
-      <RecetaList recetas={recetas} />
-      <Container>
-        <Carousel breakPoints={breakPoints}>
-          <Card className="carta" number="1" />
-          <Card className="carta" number="2" />
-          <Card className="carta" number="3" />
-          <Card className="carta" number="4" />
-          <Card className="carta" number="5" />
-          <Card className="carta" number="6" />
-        </Carousel>
-      </Container>
-      <Container className="nuevas-recetas">
+
+      {/* Categorías */}
+      <CategoriaList categorias={categorias} /> 
+
+      {/* Nuevas recetas */}
+      <RecetaList recetas={recetas} /> 
+      
+      <Container className="nuevas-recetas-2">
         <Row>
           <Col>
             <CardCarousel titulo={1} />
@@ -227,6 +238,16 @@ export function Home() {
           </Col>
         </Row>
       </Container>
+      {/* <Container>
+        <Carousel breakPoints={breakPoints}>
+          <Card className="carta" number="1" />
+          <Card className="carta" number="2" />
+          <Card className="carta" number="3" />
+          <Card className="carta" number="4" />
+          <Card className="carta" number="5" />
+          <Card className="carta" number="6" />
+        </Carousel>
+      </Container> */}
     </div>
   )
 }

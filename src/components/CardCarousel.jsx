@@ -389,6 +389,27 @@ export function CardCarousel({ titulo }) {
 
   }
 
+  const isActive = (indexes, cardIndex) => {
+    if (indexes.action === 'left') {
+      if (indexes.previousIndex === cardIndex) {
+        return 'prev left';
+      } else if (indexes.currentIndex === cardIndex) {
+        return 'active left';
+      } else if (indexes.nextIndex === cardIndex) {
+        return 'next left';
+      }
+    } else {
+      if (indexes.previousIndex === cardIndex) {
+        return 'prev right';
+      } else if (indexes.currentIndex === cardIndex) {
+        return 'active right';
+      } else if (indexes.nextIndex === cardIndex) {
+        return 'next right';
+      }
+    }
+    return "inactive";
+  }
+
   // useEffect(() => {
   //  const transitionInterval = setInterval(() => {
   //    handleCardTransition();
@@ -405,6 +426,11 @@ export function CardCarousel({ titulo }) {
           <li
             key={card.id}
             className={`cardd ${determineClasses(indexes, index)}`}
+            onClick={(`${determineClasses(indexes, index)}` == 'active right' 
+              || `${determineClasses(indexes, index)}` == 'active left') 
+              ? () => console.log(card.nombre)
+              : undefined
+            }
           >
             <Card className="li-card">
               <Card.Img className="cover" variant="top" src={card.imagen} />
