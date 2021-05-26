@@ -223,7 +223,7 @@ export function Home() {
       <CategoriaList categorias={categorias} /> 
 
       {/* Nuevas recetas */}
-      <RecetaList recetas={recetas} /> 
+      {/* <RecetaList recetas={recetas} />  */}
       
       <Container className="nuevas-recetas-2">
         <Row>
@@ -238,6 +238,7 @@ export function Home() {
           </Col>
         </Row>
       </Container>
+      
       {/* <Container>
         <Carousel breakPoints={breakPoints}>
           <Card className="carta" number="1" />

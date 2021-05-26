@@ -1,15 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import * as Helpers from '../helpers/Helpers';
 import "../assets/scss/Categorias.scss";
-
 import {
   Row,
   Col,
-  Card,
-  Button,
-  Image,
-  Carousel,
-  Container,
+  Card
 } from "react-bootstrap";
 
 export function Categoria({ categoria }) {

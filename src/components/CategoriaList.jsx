@@ -1,8 +1,10 @@
 import React from 'react'
 import '../assets/scss/CategoriaList.scss';
-
-import { Container, CardDeck, CardGroup, CardColumns, Row } from 'react-bootstrap';
-
+import { 
+  Container, 
+  CardGroup, 
+  Row 
+} from 'react-bootstrap';
 import { Categoria } from './Categoria';
 
 export function CategoriaList({ categorias }) {
