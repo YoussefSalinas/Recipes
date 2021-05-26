@@ -21,6 +21,7 @@ export function RecetaList({ recetas }) {
               />
             ))}
         </Row>
+          </Carousel>
       </CardGroup>
     </Container>
   )

@@ -1,8 +1,6 @@
 import React, { useEffect, useCallback, useState, Fragment } from "react";
 import "../assets/scss/CardCarousel.scss";
-
 import * as Helpers from '../helpers/Helpers';
-
 import {
   Row,
   Col,
