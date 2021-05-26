@@ -5,14 +5,21 @@ import { Container, CardDeck, CardGroup, CardColumns, Row } from 'react-bootstra
 
 import { RecetaDetalle } from './RecetaDetalle'
 
+import Carousel from 'react-elastic-carousel';
+
 export function RecetaList({ recetas }) {
+
   return (
-    <Container>
+    <Container className="nuevas-recetas">
       <CardGroup>
+        <h2 className="title">Nuevas recetas</h2>
         <Row>
-          {recetas.map(( receta ) => (
-            <RecetaDetalle key={receta.id} receta={receta} />
-          ))}
+            {recetas.map(( receta, index ) => (
+              <RecetaDetalle 
+                key={receta.id} 
+                receta={receta} 
+              />
+            ))}
         </Row>
       </CardGroup>
     </Container>

@@ -1,7 +1,6 @@
 /* ----------------------------------------------- */
 /* Media Queries */
 /* ----------------------------------------------- */
-
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
@@ -13,14 +12,71 @@ $xxl: 1400px;
   //  font-size:12px;
   //}
 }
-
+/** Recetas Home **/
 .card {
   margin: 1rem auto;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   border: 1px solid rgba(0,0,0,0.25) !important;
+  cursor: pointer;
 }
-.card img {
-  min-height: 225px;
-  max-height: 225px;
+/** Imagen de la receta **/
+.card img.cover {
+  border-radius: 1rem 1rem 0 0;
+  min-height: 200px;
+  max-height: 200px;
   object-fit: cover;
+}
+/** Cuerpo de la receta **/
+.card .card-body {
+  padding: 0.5rem;
+}
+/** Nombre de la receta **/
+.card .card-body .row.name {
+  text-align: left;
+  margin: 0.5rem auto 0.75rem auto;
+}
+.card .card-body .row.name .card-title {
+  font-weight: bold;
+  font-size: 1.15rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+/** Demás información **/
+.card .card-body .row.info {
+  margin-left: 0;
+  margin-right: 0;
+  border-top: 1px solid rgba(1,1,1,0.175);
+  padding-top: 1rem;
+}
+/** Perfil **/
+.card .card-body .row.info .col.profile,
+.card .card-body .row.info .col.profile .col {
+  padding-left: 0;
+  padding-right: 0;
+}
+.card .card-body .row.info .col.profile img {
+  min-height: 50px;
+  max-height: 50px;
+}
+.card .card-body .row.info .col.profile p {
+  margin: 0.5rem auto 0;
+  text-align: start;
+}
+/** Categoría y dificultad **/
+.card .card-body .row.info .difficulty-category {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+/** Dificultad **/
+.card .card-body .row.info .difficulty-category .difficulty {
+  text-align: end;
+  margin-bottom: 0.25rem;
+}
+/** Categoría **/
+.card .card-body .row.info .difficulty-category .category {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #6c757d;
+  text-align: end;
+  margin-top: auto;
 }
