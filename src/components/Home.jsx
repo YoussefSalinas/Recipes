@@ -7,10 +7,10 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { RecetaList } from './RecetaList';
 
-import Carousel from 'react-elastic-carousel';
 import { Card } from './Card';
 import { CardCarousel } from './CardCarousel';
 import { CategoriaList } from './CategoriaList';
+import { RecetasList2 } from './RecetasList2';
 
 export function Home() {
   const [recetas, setRecetas] = useState([
@@ -224,7 +224,10 @@ export function Home() {
 
       {/* Nuevas recetas */}
       {/* <RecetaList recetas={recetas} />  */}
-      
+
+      {/*  Recetas */}
+      <RecetasList2 titulo={'1'} recetas={recetas} />
+
       <Container className="nuevas-recetas-2">
         <Row>
           <Col>

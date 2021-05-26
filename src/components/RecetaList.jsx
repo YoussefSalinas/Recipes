@@ -5,8 +5,6 @@ import { Container, CardDeck, CardGroup, CardColumns, Row } from 'react-bootstra
 
 import { RecetaDetalle } from './RecetaDetalle'
 
-import Carousel from 'react-elastic-carousel';
-
 export function RecetaList({ recetas }) {
 
   return (
