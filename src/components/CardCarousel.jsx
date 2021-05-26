@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback, useState, Fragment } from "react";
 import "../assets/scss/CardCarousel.scss";
-
+import * as Helpers from '../helpers/Helpers';
 import {
   Row,
   Col,
@@ -404,13 +404,18 @@ export function CardCarousel({ titulo }) {
         {recetas.map((card, index) => (
           <li
             key={card.id}
-            className={`cardd ${determineClasses(indexes, index)}`}
+            className={`cardd ${Helpers.determineClasses(indexes, index)}`}
+            onClick={(`${Helpers.determineClasses(indexes, index)}` == 'active right' 
+              || `${Helpers.determineClasses(indexes, index)}` == 'active left') 
+              ? () => console.log(card.nombre)
+              : undefined
+            }
           >
             <Card className="li-card">
               <Card.Img className="cover" variant="top" src={card.imagen} />
               <Card.Body>
                 <Row className="name">
-                  <Card.Title>{reduceText(card.nombre, 35)}</Card.Title>
+                  <Card.Title>{Helpers.reduceText(card.nombre, 35)}</Card.Title>
                 </Row>
                 <Row className="info">
                   <Col className="profile">
@@ -426,10 +431,10 @@ export function CardCarousel({ titulo }) {
                   <Col className="difficulty-category">
                     <Row>
                       <Col className="difficulty">
-                        {renderDifficulty(card.dificultad)}
+                        {Helpers.renderDifficulty(card.dificultad)}
                       </Col>
                       <Card.Subtitle className="category">
-                        {capitalizeFirstLetter(card.categoria)}
+                        {Helpers.capitalizeFirstLetter(card.categoria)}
                       </Card.Subtitle>
                     </Row>
                   </Col>
