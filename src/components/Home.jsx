@@ -216,19 +216,6 @@ export function Home() {
     { width: 1200, itemsToShow: 4 }
   ]
 
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
-
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 500, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 }
-  ]
-
   return (
     <div className="home">
 
