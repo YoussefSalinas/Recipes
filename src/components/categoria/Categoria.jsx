@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import "../../assets/scss/categoria/Categoria.scss";
 import * as Helpers from '../../helpers/Helpers';
 import {
@@ -6,13 +6,18 @@ import {
   Col,
   Card
 } from "react-bootstrap";
+import { RecetaListCategoria } from '../receta/RecetaListCategoria';
 
 export function Categoria({ categoria }) {
   const { nombre, imagen } = categoria;
 
+
+
   return (
     <Col className="categoria">
-      <Card>
+      <Card
+        
+      >
         <Card.Img
           variant="top"
           src={imagen}
