@@ -1,0 +1,37 @@
+/* ----------------------------------------------- */
+/* Media Queries */
+/* ----------------------------------------------- */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@media screen and (max-width: $md) {
+
+}
+
+.navbar {
+  margin: 2rem 2rem 1rem 2rem;
+
+  .navbar-brand {
+    margin: auto 1rem;
+  }
+  .navbar-nav {
+    justify-content: flex-start;
+    width: 55%;
+  }
+  form {
+    display: flex;
+    width: 30%;
+
+    button {
+      margin: auto 1rem auto 0.25rem;
+    }
+  }
+  Button.log-in,
+  Button.log-out,
+  .account {
+    margin: auto 1rem;
+  }
+}

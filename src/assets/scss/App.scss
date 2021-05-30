@@ -1,40 +1,24 @@
 @import "~bootstrap/scss/bootstrap";
 
-.App {
-  text-align: center;
+/* ----------------------------------------------- */
+/* Media Queries */
+/* ----------------------------------------------- */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@media screen and (max-width: $md) {
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/** General **/
+.container {
+  margin: 3.5rem auto 2.5rem auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  text-align: left;
+  font-weight: bold;
+  margin: 0 auto 2rem 0;
 }

@@ -1,9 +1,8 @@
-import logo from './assets/images/logo.svg';
 import './assets/scss/App.scss';
 
 // Componentes
-import { Home } from './components/Home';
-import { NavbarComponent } from './components/NavbarComponent';
+import { Home } from './components/home/Home';
+import { NavbarComponent } from './components/navbar/NavbarComponent';
 
 function App() {
   return (

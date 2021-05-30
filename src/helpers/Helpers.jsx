@@ -33,6 +33,12 @@ export const renderDifficulty = (difficulty) => {
           <FontAwesomeIcon icon={faStar} />
         </Fragment>
       );
+    default:
+      return (
+        <Fragment>
+          <FontAwesomeIcon icon={faStar} />
+        </Fragment>
+      );
   }
 };
 
