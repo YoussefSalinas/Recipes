@@ -1,11 +1,11 @@
 import React from 'react';
 import '../../assets/scss/categoria/CategoriaList.scss';
+import * as Helpers from '../../helpers/Helpers';
 import { 
   Container, 
   CardGroup, 
   Row 
 } from 'react-bootstrap';
-import { Categoria } from './Categoria';
 
 export function CategoriaList({ titulo, categorias }) {
   return (
@@ -13,12 +13,11 @@ export function CategoriaList({ titulo, categorias }) {
       <CardGroup>
         <h2 className="title">{titulo}</h2>
         <Row>
-          {categorias.map(( categoria, index ) => (
-            <Categoria
-              key={index} 
-              categoria={categoria} 
-            />
-          ))}
+          { categorias.length > 0 && 
+            categorias.map(( categoria, index ) => (
+              Helpers.renderCategoriaHome(index, categoria)
+            ))
+          }
         </Row>
       </CardGroup>
     </Container>

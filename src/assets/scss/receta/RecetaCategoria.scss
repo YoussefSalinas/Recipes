@@ -1,0 +1,21 @@
+/* ----------------------------------------------- */
+/* Media Queries */
+/* ----------------------------------------------- */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@media screen and (max-width: $md) {
+}
+/** Receta **/
+.receta_categoria {
+
+  .card {
+
+    &:hover {
+      transform: translateY(-15px);
+    }
+  }
+}

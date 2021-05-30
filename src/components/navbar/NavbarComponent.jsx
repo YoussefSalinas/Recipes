@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import "../../assets/scss/navbar/Navbar.scss";
-
 import {
   Button,
   Navbar,
@@ -9,6 +8,12 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 export function NavbarComponent() {
   const [isConnected, setConnected] = useState(false);
@@ -24,12 +29,17 @@ export function NavbarComponent() {
   return (
     <Fragment>
       <Navbar>
-        <Navbar.Brand>Recetas</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/">Home</Link>
+        </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav className="mr-auto">
             <NavDropdown title="Categorías">
-              <NavDropdown.Item href="#action/3.1">Desayunos</NavDropdown.Item>
+              <Link to="/desayunos">Desayunos</Link>
+              <Link to="/comidas">Comidas</Link>
+              <Link to="/cenas">Cenas</Link>
+              <NavDropdown.Item href="/desayunos" >Desayunos</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Comidas</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Cenas</NavDropdown.Item>
             </NavDropdown>
