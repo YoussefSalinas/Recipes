@@ -1,5 +1,5 @@
-import React from 'react'
-import '../assets/scss/CategoriaList.scss';
+import React from 'react';
+import '../../assets/scss/categoria/CategoriaList.scss';
 import { 
   Container, 
   CardGroup, 
@@ -7,11 +7,11 @@ import {
 } from 'react-bootstrap';
 import { Categoria } from './Categoria';
 
-export function CategoriaList({ categorias }) {
+export function CategoriaList({ titulo, categorias }) {
   return (
-    <Container className="categorias">
+    <Container>
       <CardGroup>
-        <h2 className="title">Nuevas categorías</h2>
+        <h2 className="title">{titulo}</h2>
         <Row>
           {categorias.map(( categoria, index ) => (
             <Categoria

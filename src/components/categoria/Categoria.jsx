@@ -1,6 +1,6 @@
 import React from 'react'
-import * as Helpers from '../helpers/Helpers';
-import "../assets/scss/Categorias.scss";
+import "../../assets/scss/categoria/Categoria.scss";
+import * as Helpers from '../../helpers/Helpers';
 import {
   Row,
   Col,
@@ -11,10 +11,9 @@ export function Categoria({ categoria }) {
   const { nombre, imagen } = categoria;
 
   return (
-    <Col >
+    <Col className="categoria">
       <Card>
         <Card.Img
-          className="cover"
           variant="top"
           src={imagen}
         />
