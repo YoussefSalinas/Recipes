@@ -1,0 +1,99 @@
+/* ----------------------------------------------- */
+/* Media Queries */
+/* ----------------------------------------------- */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@media screen and (max-width: $md) {
+
+}
+/** Receta **/
+.receta {
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin: 2rem auto 10.5rem auto;
+    align-items: center;
+    position: relative;
+
+    li {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 0;
+      box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+      width: 25rem;
+      height: 21.5rem;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      position: absolute;
+      transform: scale(0.75) translateY(45px);
+      cursor: default;
+
+      &.prev.right {
+        z-index: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.7s ease-out;
+        transform: scale(1) translateY(-70px);
+      }
+      &.active.right {
+        z-index: 2;
+        opacity: 1;
+        transform: scale(0.87) translateY(-15px);
+        box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+        cursor: pointer;
+      }
+      &.next.right {
+        opacity: 1;
+        z-index: 1;
+        transition: all 0.7s ease-in;
+        box-shadow: 0 30px 30px rgba(0, 0, 0, 0.25);
+      }
+      &.prev.left {
+        z-index: 0;
+        opacity: 1;
+        visibility: inherit;
+        transition: all 0.7s ease-out;
+        transform: scale(0.75) translateY(45px);
+        box-shadow: 0 30px 30px rgba(0, 0, 0, 0.25);
+      }
+      &.active.left {
+        z-index: 2;
+        opacity: 1;
+        transform: scale(0.87) translateY(-15px);
+        box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+        cursor: pointer;
+      }
+      &.next.left {
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.7s ease-in;
+        transform: scale(1) translateY(-70px);
+        visibility: hidden;
+      }
+    }
+  }
+  /** Controles **/
+  .controls {
+
+    .col:nth-of-type(1) {
+      text-align: end;
+    }
+    .col:nth-of-type(2) {
+      text-align: left;
+    }
+    .col button {
+      background-color: white;
+      color: black;
+      border: none;
+      font-size: 2rem;
+    }
+  }
+}

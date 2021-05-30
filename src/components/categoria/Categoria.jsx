@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import "../../assets/scss/categoria/Categoria.scss";
 import * as Helpers from '../../helpers/Helpers';
 import {

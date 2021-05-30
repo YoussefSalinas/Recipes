@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import "../../assets/scss/receta/Receta.scss";
+import "../../assets/scss/receta/RecetaHome.scss";
 import * as Helpers from '../../helpers/Helpers';
 import {
   Row,
@@ -14,7 +15,7 @@ import {
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-export function Receta({ titulo, recetas }) {
+export function RecetaHome({ titulo, recetas }) {
 
   const [indexes, setIndexes] = useState({
     previousIndex: recetas.length - 1,
