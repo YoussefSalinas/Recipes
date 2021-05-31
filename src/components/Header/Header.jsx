@@ -1,21 +1,11 @@
 import React, { Fragment, useState } from "react";
-import "../../assets/scss/navbar/Navbar.scss";
-import {
-  Button,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-} from "react-bootstrap";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import logo from '../../assets/images/logo.svg';
+import "../../assets/styles/components/_header.scss";
+import { Button, Navbar, Nav, NavDropdown, Form, FormControl } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {LinkContainer} from 'react-router-bootstrap';
 
-export function NavbarComponent() {
+export function Header() {
   const [isConnected, setConnected] = useState(false);
 
   function handleLogin() {
@@ -30,20 +20,27 @@ export function NavbarComponent() {
     <Fragment>
       <Navbar>
         <Navbar.Brand>
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <img src={logo} width="100" height="50" />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle />
+
         <Navbar.Collapse className="justify-content-end">
           <Nav className="mr-auto">
             <NavDropdown title="Categorías">
-              <Link to="/desayunos">Desayunos</Link>
-              <Link to="/comidas">Comidas</Link>
-              <Link to="/cenas">Cenas</Link>
-              <NavDropdown.Item href="/desayunos" >Desayunos</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Comidas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Cenas</NavDropdown.Item>
+              <LinkContainer to="/categoria/desayunos">
+                <Nav.Link>Desayunos</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/categoria/comidas">
+                <Nav.Link>Comidas</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/categoria/cenas">
+                <Nav.Link>Cenas</Nav.Link>
+              </LinkContainer>
             </NavDropdown>
           </Nav>
+
           <Form inline>
             <FormControl type="text" placeholder="Buscar alguna receta" className="mr-sm-2" />
             <Button variant="outline-info">Buscar</Button>

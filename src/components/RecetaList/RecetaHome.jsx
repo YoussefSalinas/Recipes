@@ -1,19 +1,10 @@
 import React, { useCallback, useState } from 'react'
-import "../../assets/scss/receta/Receta.scss";
-import "../../assets/scss/receta/RecetaHome.scss";
+import "../../assets/styles/components/_receta.scss";
+import "../../assets/styles/components/_recetaHome.scss";
 import * as Helpers from '../../helpers/Helpers';
-import {
-  Row,
-  Col,
-  Card,
-  Button,
-  Image,
-} from "react-bootstrap";
+import { Row, Col, Card, Button, Image, Badge } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleLeft,
-  faAngleRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export function RecetaHome({ titulo, recetas }) {
 
@@ -81,6 +72,12 @@ export function RecetaHome({ titulo, recetas }) {
     )
   }
 
+  const renderCategory = (category) => {
+    return (
+      <Badge variant={`${category}`}>{category}</Badge>
+    )
+  }
+
   return (
     <Col className="receta">
       <h3 className="title">{titulo}</h3>
@@ -118,7 +115,7 @@ export function RecetaHome({ titulo, recetas }) {
                         {Helpers.renderDifficulty(card.dificultad)}
                       </Col>
                       <Card.Subtitle className="category">
-                        {Helpers.capitalizeFirstLetter(card.categoria)}
+                        {renderCategory(card.categoria)}
                       </Card.Subtitle>
                     </Row>
                   </Col>

@@ -1,20 +1,20 @@
 import React from 'react';
-import '../../assets/scss/categoria/CategoriaList.scss';
+import '../../assets/styles/components/_categoriaList.scss';
 import * as Helpers from '../../helpers/Helpers';
-import { 
-  Container, 
-  CardGroup, 
-  Row 
-} from 'react-bootstrap';
+import { Container, CardGroup, Row } from 'react-bootstrap';
 
-export function CategoriaList({ titulo, categorias }) {
+export function CategoriaList() {
+
+  let titulo = 'Categorías';
+  let data = Helpers.datosCategorias();
+
   return (
     <Container>
       <CardGroup>
         <h2 className="title">{titulo}</h2>
         <Row>
-          { categorias.length > 0 && 
-            categorias.map(( categoria, index ) => (
+          { data.length > 0 && 
+            data.map(( categoria, index ) => (
               Helpers.renderCategoriaHome(index, categoria)
             ))
           }

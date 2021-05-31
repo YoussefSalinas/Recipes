@@ -1,17 +1,13 @@
 import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { Categoria } from '../components/categoria/Categoria';
-import { RecetaHome } from '../components/receta/RecetaHome';
-import { RecetaCategoria } from '../components/receta/RecetaCategoria';
+import { Categoria } from '../components/CategoriaList/Categoria';
+import { RecetaHome } from '../components/RecetaList/RecetaHome';
+import { RecetaCategoria } from '../components/RecetaList/RecetaCategoria';
 
 export const reduceText = (text, qty) => {
   return text.length > qty ? `${text.substring(0, qty)}...` : text;
 };
-
-export const capitalizeFirstLetter = (text) => {
-  return text.charAt(0).toUpperCase() + text.slice(1);
-}
 
 export const renderDifficulty = (difficulty) => {
   switch (difficulty) {

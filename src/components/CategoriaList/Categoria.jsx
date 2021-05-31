@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../assets/scss/categoria/Categoria.scss";
+import "../../assets/styles/components/_categoria.scss";
 import * as Helpers from '../../helpers/Helpers';
 import {
   Row,
@@ -19,7 +19,8 @@ export function Categoria({ categoria }) {
         />
         <Card.Body>
           <Row className="name">
-            <Card.Title>{Helpers.capitalizeFirstLetter(nombre)}</Card.Title>
+            {/* <Card.Title>{Helpers.capitalizeFirstLetter(nombre)}</Card.Title> */}
+            <Card.Title>{nombre}</Card.Title>
           </Row>
         </Card.Body>
       </Card>
