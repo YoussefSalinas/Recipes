@@ -1,14 +1,8 @@
 import React from "react";
-import "../../assets/scss/receta/Receta.scss";
-import "../../assets/scss/receta/RecetaCategoria.scss";
+import "../../assets/styles/components/_receta.scss";
+import "../../assets/styles/components/_recetaCategoria.scss";
 import * as Helpers from '../../helpers/Helpers';
-import {
-  Row,
-  Col,
-  Card,
-  Button,
-  Image,
-} from "react-bootstrap";
+import { Row, Col, Card, Image } from "react-bootstrap";
 
 export function RecetaCategoria({ receta }) {
   const { nombre, imagen, imagenUsuario, nombreUsuario, dificultad, categoria } = receta;
@@ -38,7 +32,7 @@ export function RecetaCategoria({ receta }) {
                   {Helpers.renderDifficulty(dificultad)}
                 </Col>
                 <Card.Subtitle className="category">
-                  {Helpers.capitalizeFirstLetter(categoria)}
+                  {categoria}
                 </Card.Subtitle>
               </Row>
             </Col>

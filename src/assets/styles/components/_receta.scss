@@ -48,16 +48,21 @@ $xxl: 1400px;
         margin-left: 0;
         margin-right: 0;
         border-top: 1px solid rgba(1, 1, 1, 0.175);
-        padding-top: 1rem;
+        // padding-top: 1rem;
 
         /** Perfil **/
         .col.profile {
+          padding-top: 0.75rem;
+
           .col {
             padding-left: 0;
             padding-right: 0;
 
             &:nth-of-type(1) {
               max-width: 5rem;
+            }
+            &:nth-of-type(2) {
+              margin-left: -15px;
             }
           }
           /** Imagen del perfil **/
@@ -67,7 +72,7 @@ $xxl: 1400px;
           }
           /** Nombre del perfil **/
           p {
-            margin: 0.5rem auto 0;
+            margin: 0.75rem auto 0;
             text-align: start;
           }
         }
@@ -81,6 +86,11 @@ $xxl: 1400px;
           .difficulty {
             text-align: end;
             margin-bottom: 0.25rem;
+            padding: 0.5rem 1rem;
+
+            svg {
+              color: #bdbd19;
+            }
           }
           /** Categoría **/
           .category {
@@ -89,6 +99,37 @@ $xxl: 1400px;
             color: #6c757d;
             text-align: end;
             margin-top: auto;
+
+            .badge-desayunos {
+              color: #fff;
+              background-color: #17a2b8;
+              font-size: 1rem;
+              padding: 0.5rem 0.75rem;
+
+              &::first-letter {
+                text-transform: uppercase;
+              }
+            }
+            .badge-comidas {
+              color: #fff;
+              background-color: #17b85a;
+              font-size: 1rem;
+              padding: 0.5rem 0.75rem;
+
+              &::first-letter {
+                text-transform: uppercase;
+              }
+            }
+            .badge-cenas {
+              color: #fff;
+              background-color: #b89317;
+              font-size: 1rem;
+              padding: 0.5rem 0.75rem;
+
+              &::first-letter {
+                text-transform: uppercase;
+              }
+            }
           }
         }
       }

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "../../assets/scss/home/Home.scss";
-
-import { CategoriaList } from "../categoria/CategoriaList";
-import { RecetaListHome } from "../receta/RecetaListHome";
+import "../../assets/styles/components/_home.scss";
+import { CategoriaList } from "../CategoriaList/CategoriaList";
+import { RecetaListHome } from "../RecetaList/RecetaListHome";
 
 export function Home({ 
   categorias,
